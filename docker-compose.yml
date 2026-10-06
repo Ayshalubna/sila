@@ -1,0 +1,6 @@
+services:
+  sila:
+    build: .
+    ports:
+      - "8000:7860"
+    restart: unless-stopped

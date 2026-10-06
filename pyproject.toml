@@ -1,0 +1,17 @@
+[project]
+name = "sila"
+version = "1.0.0"
+description = "Sila - SME liquidity mesh: predicts small-business cash shortfalls and prevents them with the network's own money"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 125
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP"]
+ignore = ["E501", "B008", "B905", "B019"]  # B019: lru_cache on the process-wide singleton is intended
