@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-test-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SILA_DB: /tmp/sila_ci.db
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: ruff check .
+      - name: Build network, models and six-month replay from scratch
+        run: python -m scripts.build
+      - name: Unit and integration tests
+        run: pytest -q
+      - name: Evaluation gate (fails if metrics regress)
+        run: python -m eval.run_eval
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: |
+            eval/RESULTS.md
+            eval/results.json
