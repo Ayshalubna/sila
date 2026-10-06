@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sila — SME liquidity mesh</title>
+<meta name="description" content="Sila forecasts every small business's cash 28 days ahead and closes gaps with money the network already has: no loans, no interest, nothing without both owners' consent.">
+<link rel="preload" href="/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C2420'/%3E%3Cpath d='M7 20c4-9 8-9 9 0s5 9 9 0' stroke='%2341C2AE' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<header class="top">
+  <a class="mark" href="#/" aria-label="Sila home">
+    <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M3 15c5-11 10-11 12 0s9 11 14 0 8-8 8-8" /></svg>
+    <span class="mark-en">Sila</span><span class="mark-ar" lang="ar">صلة</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#/today" data-i18n="nav_today">Today</a>
+    <a href="#/businesses" data-i18n="nav_businesses">Businesses</a>
+    <a href="#/network" data-i18n="nav_network">Network</a>
+    <a href="#/proof" data-i18n="nav_proof">Proof</a>
+    <a href="#/how" data-i18n="nav_how">How it works</a>
+  </nav>
+  <div class="top-tools">
+    <button class="lang" id="lang" type="button" aria-label="Switch language">عربي</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" data-i18n="menu">Menu</button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav" hidden aria-label="Main (mobile)">
+  <a href="#/today" data-i18n="nav_today">Today</a>
+  <a href="#/businesses" data-i18n="nav_businesses">Businesses</a>
+  <a href="#/network" data-i18n="nav_network">Network</a>
+  <a href="#/proof" data-i18n="nav_proof">Proof</a>
+  <a href="#/how" data-i18n="nav_how">How it works</a>
+</nav>
+<main id="main" tabindex="-1"><div class="loading" data-i18n="loading">Loading the network…</div></main>
+<footer class="foot">
+  <p data-i18n="foot_data">All businesses, people and transactions here are synthetic. No real company or bank data is used.</p>
+  <p><span data-i18n="foot_by">Built by Ayesha Lubna for the du × Ignyte SME Resilience &amp; Innovation Challenge.</span>
+    <a href="https://github.com/Ayshalubna/sila" rel="noopener" data-i18n="foot_code">Source code on GitHub</a></p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<script src="/i18n.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
